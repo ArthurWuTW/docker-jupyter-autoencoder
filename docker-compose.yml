@@ -1,0 +1,10 @@
+version: "2.1"
+services:
+
+  autoencoder-env:
+    build:
+      context: ./image
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    entrypoint: /sbin/init
