@@ -10,5 +10,7 @@ services:
       - JUPYTER_TOKEN=easy
     entrypoint: /run-jupyter
     #entrypoint: /sbin/init
+    volumes:
+      - /home/arthur/Desktop/docker-jupyter-autoencoder:/home/docker-jupyter-autoencoder:rw
     ports:
       - 8888:8888
