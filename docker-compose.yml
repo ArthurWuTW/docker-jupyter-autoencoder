@@ -7,4 +7,7 @@ services:
     runtime: nvidia
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
+      - JUPYTER_TOKEN=easy
     entrypoint: /sbin/init
+    ports:
+      - 8888:8888
