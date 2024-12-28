@@ -12,3 +12,6 @@ RUN jupyter notebook --generate-config
 RUN sed -i "s/# c.ServerApp.allow_origin = ''/c.ServerApp.allow_origin = '*'/g" /root/.jupyter/jupyter_notebook_config.py
 RUN sed -i "s/# c.ServerApp.ip = 'localhost'/c.ServerApp.ip = '0.0.0.0'/g" /root/.jupyter/jupyter_notebook_config.py
 RUN sed -i "s/# c.ServerApp.allow_remote_access = False/c.ServerApp.allow_remote_access = True/g" /root/.jupyter/jupyter_notebook_config.py
+RUN sed -i "s~# c.ServerApp.notebook_dir = ''~c.ServerApp.notebook_dir = '/home/'~g" /root/.jupyter/jupyter_notebook_config.py
+
+COPY run-jupyter.sh /run-jupyter
