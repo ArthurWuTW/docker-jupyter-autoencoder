@@ -1,3 +1,3 @@
 #!/bin/bash
 
-jupyter notebook --allow-root --no-browser
+jupyter notebook --no-browser

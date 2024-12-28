@@ -4,13 +4,18 @@ services:
   autoencoder-env:
     build:
       context: ./image
+      args:
+        HOSTUSER: ${HOSTUSER}
+        HOSTUID: ${HOSTUID}
+        HOSTGID: ${HOSTGID}
+    user: ${HOSTUSER}:${HOSTUSER}
     runtime: nvidia
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
       - JUPYTER_TOKEN=easy
-    entrypoint: /run-jupyter
+    entrypoint: /home/${HOSTUSER}/run-jupyter
     #entrypoint: /sbin/init
     volumes:
-      - /home/arthur/Desktop/docker-jupyter-autoencoder:/home/docker-jupyter-autoencoder:rw
+      - /home/arthur/Desktop/docker-jupyter-autoencoder/jupyter:/home/${HOSTUSER}/jupyter:rw
     ports:
       - 8888:8888
