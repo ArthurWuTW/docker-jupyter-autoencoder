@@ -13,6 +13,7 @@ RUN yum install -y libnccl libnccl-devel libnccl-static
 
 RUN pip3.12 install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu121
 RUN pip3.12 install six matplotlib
+RUN pip3.12 install torchsummary
 
 RUN pip3.12 install jupyter
 COPY run-jupyter.sh /home/${HOSTUSER}/run-jupyter
