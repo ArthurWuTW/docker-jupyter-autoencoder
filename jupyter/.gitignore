@@ -1,2 +1,3 @@
 .ipynb_checkpoints/*
 data/*
+mode_AutoEncoder_MNIST.pth
