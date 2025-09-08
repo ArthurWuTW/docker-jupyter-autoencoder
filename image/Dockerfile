@@ -19,6 +19,13 @@ RUN pip3.12 install jupyter
 COPY run-jupyter.sh /home/${HOSTUSER}/run-jupyter
 RUN chown ${HOSTUSER}:${HOSTUSER} /home/${HOSTUSER}/run-jupyter
 
+
+
+# Install vLLM dependencies
+RUN yum install -y python3.12-devel
+RUN pip3.12 install vllm
+
+
 USER ${HOSTUSER}
 RUN jupyter notebook --generate-config
 RUN sed -i "s/# c.ServerApp.allow_origin = ''/c.ServerApp.allow_origin = '*'/g" /home/${HOSTUSER}/.jupyter/jupyter_notebook_config.py
