@@ -22,8 +22,8 @@ RUN chown ${HOSTUSER}:${HOSTUSER} /home/${HOSTUSER}/run-jupyter
 
 
 # Install vLLM dependencies
-RUN yum install -y python3.12-devel
-RUN pip3.12 install vllm
+#RUN yum install -y python3.12-devel
+#RUN pip3.12 install vllm
 
 
 USER ${HOSTUSER}
